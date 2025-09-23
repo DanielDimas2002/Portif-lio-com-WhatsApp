@@ -1,3 +1,4 @@
+/* Reset básico para garantir consistência entre navegadores */
 * {
     margin: 0;
     padding: 0;
@@ -5,42 +6,46 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
+/* Rolagem suave ao clicar em links de navegação */
 html {
     scroll-behavior: smooth;
 }
 
+/* Variáveis de cor e efeitos globais */
 :root {
-    --primaria: #4f46e5;
-    --secundaria: #7c3aed;
-    --escuro: #0f172a;
-    --maisEscuro: #0a0f1c;
-    --claro: #e2e8f0;
-    --vidro: rgba(255, 255, 255, 0.1);
+    --primaria: #4f46e5;       /* Roxo principal */
+    --secundaria: #7c3aed;     /* Roxo secundário */
+    --escuro: #0f172a;         /* Cor de fundo escura */
+    --maisEscuro: #0a0f1c;     /* Versão ainda mais escura */
+    --claro: #e2e8f0;          /* Cor clara para textos */
+    --vidro: rgba(255, 255, 255, 0.1); /* Transparência estilo glassmorphism */
 }
 
+/* Estilização geral do corpo */
 body {
     background-color: var(--escuro);
     color: var(--claro);
-
 }
 
+/* ===== NAVBAR ===== */
 .navegacao {
-    position: fixed;
-    background: rgba(15, 23, 42, 0.8);
-    width: 100%;
-    z-index: 100;
+    position: fixed;                        /* Fixa no topo da tela */
+    background: rgba(15, 23, 42, 0.8);      /* Fundo translúcido */
+    width: 100%;                            /* Ocupa toda a largura */
+    z-index: 100;                           /* Fica acima de outros elementos */
     top: 0;
     padding: 1.5rem;
 }
 
+/* Lista do menu */
 .menu {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 3rem;                              /* Espaço entre os itens */
     justify-content: center;
 }
 
+/* Links do menu */
 .menu-link {
     text-decoration: none;
     color: var(--claro);
@@ -49,6 +54,7 @@ body {
     padding: 0.5rem 0;
 }
 
+/* Efeito underline animado ao passar o mouse */
 .menu-link::after {
     content: '';
     height: 2px;
@@ -59,28 +65,30 @@ body {
     background: linear-gradient(90deg, var(--primaria), var(--secundaria));
     transition: width 0.5s ease;
 }
-
 .menu-link:hover::after {
     width: 100%;
 }
 
+/* ===== CABEÇALHO ===== */
 .cabecalho {
-    min-height: 100vh;
+    min-height: 100vh;                      /* Ocupa toda a altura da tela */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
+/* Foto do cabeçalho */
 .foto-perfil {
     width: 350px;
     height: 350px;
-    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
-    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); /* Brilho em volta */
+    border-radius: 50%;                         /* Foto redonda */
     border: 4px solid var(--vidro);
-    animation: flutuar 5s ease-in-out infinite;
+    animation: flutuar 5s ease-in-out infinite; /* Animação suave */
 }
 
+/* Título principal */
 h1 {
     font-size: 3.5rem;
     color: var(--primaria);
@@ -88,11 +96,13 @@ h1 {
     margin: 20px;
 }
 
+/* Subtítulo */
 .cabecalho-sub-titulo {
     font-size: 1.5rem;
     color: var(--claro);
 }
 
+/* ===== SEÇÃO SOBRE ===== */
 .sobre {
     padding: 6rem 2rem;
 }
@@ -104,7 +114,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-
+/* Caixa de fundo translúcido com efeito vidro */
 .sobre-caixa {
     padding: 2rem;
     max-width: 800px;
@@ -115,24 +125,26 @@ h1 {
     background: rgba(255, 255, 255, 0.05);
 }
 
-
 .sobre-paragrafo {
     text-align: center;
     font-size: 1.5rem;
 }
 
+/* ===== SEÇÃO PROJETOS ===== */
 .projetos {
     padding: 6rem 2rem;
 }
 
+/* Grade responsiva para os cards de projetos */
 .projetos-caixa {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta automaticamente */
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Estilo dos cards */
 .projetos-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
@@ -143,58 +155,67 @@ h1 {
     cursor: pointer;
 }
 
+/* ===== TÍTULO DA SEÇÃO DE PROJETOS ===== */
 .projetos-titulo {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
 }
 
-.projetos-card:hover{
+/* Efeito de destaque ao passar o mouse nos cards */
+.projetos-card:hover {
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px) scale(1.05); /* Eleva e aumenta levemente */
 }
 
+/* Imagens dos projetos */
 .projetos-imagem {
     height: 200px;
     width: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Garante corte proporcional sem distorção */
 }
 
-.caixa-texto-projetos{
+/* Caixa de texto dentro dos cards */
+.caixa-texto-projetos {
     padding: 1.5rem;
 }
 
-.paragrafo-projetos{
+/* Texto descritivo dos projetos */
+.paragrafo-projetos {
     color: rgba(226, 226, 240, 0.8);
     line-height: 1.25rem;
 }
 
-.info-projetos{
+/* Título de cada card de projeto */
+.info-projetos {
     margin-bottom: 5px;
 }
 
-.contatos{
+/* ===== SEÇÃO DE CONTATO ===== */
+.contatos {
     padding: 6rem 2rem;
 }
 
-.contatos-titulo{
+/* Título da seção de contato */
+.contatos-titulo {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
 }
 
-.formulario-contato{
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
+/* Caixa do formulário de contato */
+.formulario-contato {
+    max-width: 600px; /* Largura máxima */
+    margin: 0 auto;   /* Centraliza na página */
+    background: rgba(255, 255, 255, 0.05); /* Fundo translúcido */
+    backdrop-filter: blur(5px);            /* Efeito vidro */
     padding: 2rem;
     border: 1px solid var(--vidro);
     border-radius: 5px;
 }
 
-.campo-form{
-
+/* Campos de entrada (input e textarea) */
+.campo-form {
     width: 100%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
@@ -202,55 +223,60 @@ h1 {
     color: var(--claro);
     border: 1px solid var(--vidro);
     outline: none;
-    resize: vertical;
+    resize: vertical; /* Permite redimensionar só na vertical */
 }
 
-.campo-form:focus{
+/* Destaque ao focar no campo */
+.campo-form:focus {
     border-color: var(--secundaria);
-    box-shadow: 0 0 10 rgba(79, 70, 229, 0.3);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3); /* Glow suave */
 }
 
-.grupo-form{
+/* Espaço entre os grupos de inputs */
+.grupo-form {
     margin-bottom: 1.5rem;
 }
 
-.botao-form{
+/* Botão do formulário */
+.botao-form {
     color: var(--claro);
-    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria)); /* Gradiente bonito */
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transition: all 0.5 ease;
+    transition: all 0.5s ease;
 }
 
-.botao-form:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+/* Efeito hover no botão */
+.botao-form:hover {
+    transform: translateY(-4px); /* Levanta um pouco */
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); /* Glow ao redor */
 }
 
-.particulas{
-    position: fixed;
+/* ===== FUNDO DE PARTÍCULAS ===== */
+.particulas {
+    position: fixed; /* Sempre cobrindo a tela */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1; /* Fica atrás de todo o conteúdo */
     opacity: 0.5;
     background: 
-    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
-    var(--maisEscuro);
+        radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+        var(--maisEscuro); /* Mistura gradientes coloridos com o fundo escuro */
 }
 
+/* ===== ANIMAÇÃO DE FLUTUAR ===== */
 @keyframes flutuar {
-    0%, 100%{
-        transform: translateY(0);
+    0%, 100% {
+        transform: translateY(0);   /* Posição inicial e final */
     }
-
-    50%{
-        transform: translateY(-20px);
+    50% {
+        transform: translateY(-20px); /* No meio do ciclo, sobe 20px */
     }
 }

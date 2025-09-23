@@ -3,105 +3,132 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Garante que o site seja exibido corretamente em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importa o CSS externo -->
     <link rel="stylesheet" href="styles.css">
     <title>Portfólio</title>
 </head>
 
 <body>
 
-
+    <!-- Área de partículas decorativas -->
     <div class="particulas"></div>
 
+    <!-- Barra de navegação fixa no topo -->
     <nav class="navegacao">
         <ul class="menu">
-            <li>
-                <a href="#inicio" class="menu-link">Início</a>
-            </li>
-            <li>
-                <a href="#sobre" class="menu-link">Sobre</a>
-            </li>
-            <li>
-                <a href="#projetos" class="menu-link">Projetos</a>
-            </li>
-            <li>
-                <a href="#contatos" class="menu-link">Contato</a>
-            </li>
+            <!-- Links que levam para seções da própria página -->
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contato</a></li>
         </ul>
     </nav>
 
+    <!-- Cabeçalho principal (hero section) -->
     <main id="inicio" class="cabecalho">
+        <!-- Foto/logo da empresa -->
         <img src="/img/IA.png" alt="Foto da empresa" class="foto-perfil">
         <h1>ITED</h1>
         <p class="cabecalho-sub-titulo">Inovação e Tecnologias Educacionais</p>
     </main>
 
+    <!-- Seção "Sobre" -->
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo">Sobre a Empresa</h2>
         <div class="sobre-caixa">
-            <p class="sobre-paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, recusandae minima?
-                Aliquam, amet sed sequi est repellat aspernatur repudiandae aliquid, officia necessitatibus nostrum quia
-                cum ab nulla provident. Dolore, provident.</p>
+            <p class="sobre-paragrafo">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, voluptatibus maxime? Voluptatibus voluptatum perspiciatis tenetur accusantium? Expedita non natus possimus similique aut delectus. Est incidunt amet voluptate dolores libero rerum?
+            </p>
         </div>
     </section>
 
+    <!-- Seção de projetos -->
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulo">Cases de Sucesso</h2>
+
+        <!-- Container com cards de projetos -->
         <div class="projetos-caixa">
 
+            <!-- Card de projeto 1 -->
             <div class="projetos-card">
                 <img src="/img/MulherCriando.jpg" alt="Projeto 1" class="projetos-imagem">
                 <div class="caixa-texto-projetos">
                     <h3 class="info-projeto">Aulas Práticas</h3>
-                    <p class="paragrafo-projetos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-                        ducimus
-                        et quia minima reiciendis quam cumque dignissimos commodi. Suscipit tempora similique
-                        perspiciatis
-                        assumenda commodi tenetur deleniti iure unde, dolor esse.</p>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde modi pariatur distinctio itaque, quod temporibus placeat nam reprehenderit rerum eius ducimus omnis cupiditate tenetur? Id ea deleniti nostrum asperiores repellendus.</p>
                 </div>
             </div>
 
+            <!-- Card de projeto 2 -->
             <div class="projetos-card">
                 <img src="/img/Mulher RV.jpg" alt="Projeto 2" class="projetos-imagem">
                 <div class="caixa-texto-projetos">
                     <h3 class="info-projeto">Realidade Virtual</h3>
-                    <p class="paragrafo-projetos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-                        ducimus
-                        et quia minima reiciendis quam cumque dignissimos commodi. Suscipit tempora similique
-                        perspiciatis
-                        assumenda commodi tenetur deleniti iure unde, dolor esse.</p>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur beatae libero, doloremque veniam consequatur impedit. Consectetur dolores tenetur nostrum consequuntur ratione, id quia magni nam eaque, deserunt fugit similique.</p>
                 </div>
             </div>
 
+            <!-- Card de projeto 3 -->
             <div class="projetos-card">
                 <img src="/img/Realidade Aumentada.jpg" alt="Projeto 3" class="projetos-imagem">
                 <div class="caixa-texto-projetos">
                     <h3 class="info-projeto">Realidade Aumentada</h3>
-                    <p class="paragrafo-projetos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-                        ducimus
-                        et quia minima reiciendis quam cumque dignissimos commodi. Suscipit tempora similique
-                        perspiciatis
-                        assumenda commodi tenetur deleniti iure unde, dolor esse.</p>
+                    <p class="paragrafo-projetos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur rem vero ipsum, necessitatibus dolorem quos cupiditate quam reiciendis consectetur non repellendus, earum, aperiam nostrum odit aliquid? Distinctio eius labore placeat.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <!-- Seção de contatos -->
     <section id="contatos" class="contatos">
         <h2 class="contatos-titulo">Entre em Contato</h2>
-        <form class="formulario-contato" id="formulario">
+
+        <!-- Formulário de contato -->
+        <!-- onsubmit chama a função enviarWhats() para abrir o WhatsApp -->
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <!-- Campo de nome -->
             <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form">
+                <input type="text" placeholder="Nome" class="campo-form" id="nome" required>
             </div>
 
+            <!-- Campo de mensagem -->
             <div class="grupo-form">
-                <textarea class="campo-form" placeholder="Digite sua Mensagem"></textarea>
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" id="mensagem" rows="6" required></textarea>
             </div>
 
+            <!-- Botão de envio -->
             <button type="submit" class="botao-form">Enviar WhatsApp</button>
         </form>
     </section>
-</body>
 
+    <script>
+        // Função responsável por capturar os dados do formulário e abrir o WhatsApp
+        function enviarWhats(event) {
+            // Evita que a página recarregue ao enviar o formulário
+            event.preventDefault();
+
+            // Captura os valores digitados pelo usuário
+            const nome = document.getElementById("nome").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            // Número de destino (WhatsApp deve estar com DDI + DDD + número)
+            const telefone = "5571985483078";
+
+            // Texto que será enviado no WhatsApp
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+
+            // Formata o texto para ser usado em URL (substitui espaços e caracteres especiais)
+            const msgFormatada = encodeURIComponent(texto);
+
+            // Monta a URL do WhatsApp com número e mensagem
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            // Abre o WhatsApp em uma nova aba/janela
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
 </html>
